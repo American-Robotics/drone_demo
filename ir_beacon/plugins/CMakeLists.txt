@@ -22,5 +22,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
 target_link_libraries(gazebo_irsensor_plugin ${GAZEBO_libraries} ${catkin_LIBRARIES})
 
+add_dependencies(gazebo_irsensor_plugin ir_beacon_generate_messages_cpp)
+
 install(TARGETS gazebo_irsensor_plugin
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/plugins)
